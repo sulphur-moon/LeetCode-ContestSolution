@@ -2,7 +2,7 @@
 
 本周比赛难度适中，考察内容比较全面，有简单的遍历，需要找规律的数学方法，需要点变成技巧的动态规划算法和字符串处理题。
 
-### [1104. 分糖果 II](https://leetcode-cn.com/contest/weekly-contest-143/problems/distribute-candies-to-people/)
+### [1103. 分糖果 II](https://leetcode-cn.com/contest/weekly-contest-143/problems/distribute-candies-to-people/)
 
 排排坐，分糖果。
 
@@ -64,7 +64,7 @@ class Solution:
         return ans
 ```
 
-### [1103. 二叉树寻路](https://leetcode-cn.com/contest/weekly-contest-143/problems/path-in-zigzag-labelled-binary-tree/)
+### [1104. 二叉树寻路](https://leetcode-cn.com/contest/weekly-contest-143/problems/path-in-zigzag-labelled-binary-tree/)
 
 在一棵无限的二叉树上，每个节点都有两个子节点，树中的节点 **逐行** 依次按 “之” 字形进行标记。
 
