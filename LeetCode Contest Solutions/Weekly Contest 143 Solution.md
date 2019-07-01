@@ -163,7 +163,7 @@ class Solution:
 
 **图解：**
 
-![图解](/pics/143-3.gif)
+![图解](https://github.com/sulphur-moon/LeetCode-ContestSolution/blob/master/LeetCode%20Contest%20Solutions/pics/143-3.gif?raw=true)
 
 **代码：**
 
