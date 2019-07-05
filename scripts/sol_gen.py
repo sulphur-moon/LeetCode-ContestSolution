@@ -12,6 +12,12 @@ def read_file_content(file_name):
 		f.close()
 	return content
 
+# 写入文件
+def write_file_content(file_name, content):
+	with open(file_name, "w", encoding="utf-8") as f:
+		f.write(content)
+		f.close()
+	return
 
 # 主程序
 def main(argv):
@@ -70,9 +76,10 @@ def main(argv):
 			tags = read_file_content(prefix + ".tags.md")
 			thoughts = read_file_content(prefix + ".thoughts.md")
 			code_python3 = read_file_content(prefix + ".code.python3.md")
-			solution_file_content += "### [" + title.replace("\n", "") + "](" + url + ")\n\n"
+			solution_file_content += "### [" + problem_id + '.' + title + "](" + url + ")\n\n"
 			solution_file_content += description + "\n" + examples + "\n" + notes + "\n" + thoughts + "\n" + code_python3 + "\n"
-			print(solution_file_content)
+		print(solution_file_content)
+		write_file_content(solution_file_name, solution_file_content)
 	elif bicontest_id:
 		file_name = "../metadata/contest/biweekly.contest." + str(bicontest_id) + ".md"
 	elif problem_id:
