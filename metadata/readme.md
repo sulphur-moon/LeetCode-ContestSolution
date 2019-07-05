@@ -4,16 +4,21 @@ problems文件夹中存放题目文档，每个题目建一个目录，目录下
 
 ```json
 {
-    title: 题目标题;
-    level: 题目难度;
-    description: 题目描述;
-    examples: 样例输入输出;
-    notes: 题目提示;
-    tags: 题目标签;
-    thoughts: 解题思路;
-    code.python3: python3代码;
+    "title": "题目标题",
+    "url": "题目链接",
+    "level": "题目难度",
+    "description": "题目描述",
+    "examples": "样例输入输出",
+    "notes": "题目提示",
+    "tags": "题目标签",
+    "thoughts": "解题思路",
+    "code.python3": "python3代码"
 }
 ```
+
+其中题目标题、链接、难度、标签四项不以换行符结尾，其他部分都以换行符结尾。
+
+
 
 contest目录下存放周赛和双周赛的题目信息，以weekly.contest为开头的文件记录周赛包含的题号，以weekly.contest.143.md为例，记录了第143场周赛包含的题目ID：
 
