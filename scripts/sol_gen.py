@@ -3,7 +3,14 @@ import os
 import sys, getopt
 
 
-
+# 题目难度颜色表
+color = {
+	'Easy': "#5CB85C",
+	'Medium': "#F0AD4E",
+	'Hard': "#D9534F"
+}
+font_color_prefix = "<font color=color_code>**"
+font_color_suffix = "**</font>\n\n"
 # 读取文件
 def read_file_content(file_name):
 	content = None
@@ -77,6 +84,7 @@ def main(argv):
 			thoughts = read_file_content(prefix + ".thoughts.md")
 			code_python3 = read_file_content(prefix + ".code.python3.md")
 			solution_file_content += "### [" + problem_id + '.' + title + "](" + url + ")\n\n"
+			solution_file_content += "**题目难度**" + font_color_prefix.replace("color_code", color[level]) + level + font_color_suffix
 			solution_file_content += description + "\n" + examples + "\n" + notes + "\n" + thoughts + "\n" + code_python3 + "\n"
 		print(solution_file_content)
 		write_file_content(solution_file_name, solution_file_content)
