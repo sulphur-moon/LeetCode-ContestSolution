@@ -2,6 +2,7 @@ from PIL import Image
 import imageio
 import os
 import os.path
+import re
 
 
 def create_gif(gif_name, path, duration=0.3):
@@ -15,6 +16,9 @@ def create_gif(gif_name, path, duration=0.3):
     frames = []
     pngFiles = os.listdir(path)
     image_list = [os.path.join(path, f) for f in pngFiles]
+    mode = re.compile(r'\d+')
+    image_list.sort(key=lambda x:int(mode.findall(x)[0]))
+    print(image_list)
     for image_name in image_list:
         # 读取 png 图像文件
         # im = Image.open(image_name)
@@ -30,8 +34,8 @@ def create_gif(gif_name, path, duration=0.3):
 
 def main():
     gif_name = 'a.gif'
-    path = 'pic'  # 指定文件路径
-    duration = 1.5
+    path = './pic'  # 指定文件路径
+    duration = 1
     create_gif(gif_name, path, duration)
 
 
