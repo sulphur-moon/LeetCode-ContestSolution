@@ -17,6 +17,18 @@ def main(argv):
 	# 按照题号生成元数据
 	problem_id = None
 
+	content = {
+		'title': '',
+		'url': '',
+		'level': 'Easy\nMedium\nHard',
+		'description': '',
+		'examples': '',
+		'notes': '',
+		'tags': '',
+		'thoughts': '**思路：**',
+		'code.python3': '**代码：**\n```python\n\n```'
+	}
+
 	# 获取命令行下参数
 	try:
 		opts, args = getopt.getopt(argv,"hi:",["id="])
@@ -44,7 +56,7 @@ def main(argv):
 			items = ['title', 'url', 'level', 'description', 'examples', 'notes', 'tags', 'thoughts', 'code.python3']
 			for item in items:
 				file_name = problem_dir + '/' + str(problem_id) + '.' + item + '.md'
-				write_file_content(file_name, '')
+				write_file_content(file_name, content[item])
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
