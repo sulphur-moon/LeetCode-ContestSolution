@@ -76,16 +76,10 @@ def main(argv):
 			prefix = "../metadata/problems/" + problem_id + "/" + problem_id
 			title = read_file_content(prefix + ".title.md")
 			url = read_file_content(prefix + ".url.md")
-			description = read_file_content(prefix + ".description.md")
-			level = read_file_content(prefix + ".level.md")
-			examples = read_file_content(prefix + ".examples.md")
-			notes = read_file_content(prefix + ".notes.md")
-			tags = read_file_content(prefix + ".tags.md")
 			thoughts = read_file_content(prefix + ".thoughts.md")
 			code_python3 = read_file_content(prefix + ".code.python3.md")
 			solution_file_content += "### [" + problem_id + '.' + title + "](" + url + ")\n\n"
-			solution_file_content += "**题目难度**" + font_color_prefix.replace("color_code", color[level]) + level + font_color_suffix
-			solution_file_content += description + "\n" + examples + "\n" + notes + "\n" + thoughts + "\n" + code_python3 + "\n"
+			solution_file_content += thoughts + "\n" + code_python3 + "\n"
 		print(solution_file_content)
 		write_file_content(solution_file_name, solution_file_content)
 	elif bicontest_id:
