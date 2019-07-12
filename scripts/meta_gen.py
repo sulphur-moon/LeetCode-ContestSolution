@@ -3,6 +3,14 @@ import os
 import sys, getopt
 
 
+# 读取文件
+def read_file_content(file_name):
+	content = None
+	with open(file_name, "r", encoding="utf-8") as f:
+		content = f.read()
+		f.close()
+	return content
+
 
 # 写入文件
 def write_file_content(file_name, content):
@@ -14,19 +22,30 @@ def write_file_content(file_name, content):
 
 # 主程序
 def main(argv):
+	# 读取所有题号、标题、链接和难度
+	list_problem_id = read_file_content("../metadata/list/id.txt").split("\n")
+	list_problem_id = list(map(int, list_problem_id))
+	list_problem_title = read_file_content("../metadata/list/title.txt").split("\n")
+	list_problem_title = list(map(str.strip, list_problem_title))
+	list_problem_url = read_file_content("../metadata/list/url.txt").split("\n")
+	list_problem_level = read_file_content("../metadata/list/level.txt").split("\n")
+
 	# 按照题号生成元数据
 	problem_id = None
 
 	content = {
 		'title': '',
 		'url': '',
-		'level': 'Easy\nMedium\nHard',
-		'description': '',
-		'examples': '',
-		'notes': '',
+		'level': '',
 		'tags': '',
 		'thoughts': '**思路：**',
 		'code.python3': '**代码：**\n```python\n\n```'
+	}
+
+	level = {
+		'简单': 'Easy',
+		'中等': 'Medium',
+		'困难': 'Hard'
 	}
 
 	# 获取命令行下参数
@@ -53,10 +72,16 @@ def main(argv):
 			print('dir: "' + problem_dir + '" exists')
 		else:
 			os.makedirs(problem_dir)
-			items = ['title', 'url', 'level', 'description', 'examples', 'notes', 'tags', 'thoughts', 'code.python3']
+			items = ['title', 'url', 'level', 'tags', 'thoughts', 'code.python3']
+			index = list_problem_id.index(int(problem_id))
+			if index != -1:
+				content['title'] = list_problem_title[index]
+				content['url'] = list_problem_url[index]
+				content['level'] = level[list_problem_level[index]]
 			for item in items:
 				file_name = problem_dir + '/' + str(problem_id) + '.' + item + '.md'
 				write_file_content(file_name, content[item])
+
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
