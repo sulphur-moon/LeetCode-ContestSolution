@@ -73,7 +73,11 @@ def main(argv):
 		else:
 			os.makedirs(problem_dir)
 			items = ['title', 'url', 'level', 'tags', 'thoughts', 'code.python3']
-			index = list_problem_id.index(int(problem_id))
+			index = -1
+			try:
+				index = list_problem_id.find(int(problem_id))
+			except Exception as e:
+				print("problem_id not in list")
 			if index != -1:
 				content['title'] = list_problem_title[index]
 				content['url'] = list_problem_url[index]
