@@ -52,7 +52,7 @@ def main(argv):
 			contest_id = arg
 			print('contest_id: ', contest_id)
 		elif opt in ("-b", "--bicontest"):
-			contest_id = arg
+			bicontest_id = arg
 			print('bicontest_id: ', bicontest_id)
 
 	# 如果没有参数则输出提示并退出
@@ -76,14 +76,35 @@ def main(argv):
 			prefix = "../metadata/problems/" + problem_id + "/" + problem_id
 			title = read_file_content(prefix + ".title.md")
 			url = read_file_content(prefix + ".url.md")
+			url = "https://leetcode-cn.com/contest/weekly-contest-" + str(contest_id) + "/problems/" + url
 			thoughts = read_file_content(prefix + ".thoughts.md")
 			code_python3 = read_file_content(prefix + ".code.python3.md")
 			solution_file_content += "### [" + problem_id + '.' + title + "](" + url + ")\n\n"
 			solution_file_content += thoughts + "\n" + code_python3 + "\n"
 		print(solution_file_content)
-		write_file_content(solution_file_name, solution_file_content)
+		write_file_content("../LeetCode Contest Solutions/" + solution_file_name, solution_file_content)
 	elif bicontest_id:
 		file_name = "../metadata/contest/biweekly.contest." + str(bicontest_id) + ".md"
+		problem_list = read_file_content(file_name)
+		if problem_list:
+			problem_list = problem_list.split()
+		print("problem_list: ", problem_list)
+		solution_file_name = "Biweekly Contest " + bicontest_id + " Solution.md"
+		solution_file_content = "## Biweekly Contest " + bicontest_id + " Solution\n\n"
+		contest_evaluation = read_file_content("../metadata/contest/biweekly.contest." + str(bicontest_id) + ".evaluation.md")
+		if contest_evaluation:
+			solution_file_content += contest_evaluation + "\n\n"
+		for problem_id in problem_list:
+			prefix = "../metadata/problems/" + problem_id + "/" + problem_id
+			title = read_file_content(prefix + ".title.md")
+			url = read_file_content(prefix + ".url.md")
+			url = "https://leetcode-cn.com/contest/biweekly-contest-" + str(bicontest_id) + "/problems/" + url
+			thoughts = read_file_content(prefix + ".thoughts.md")
+			code_python3 = read_file_content(prefix + ".code.python3.md")
+			solution_file_content += "### [" + problem_id + '.' + title + "](" + url + ")\n\n"
+			solution_file_content += thoughts + "\n" + code_python3 + "\n"
+		print(solution_file_content)
+		write_file_content("../LeetCode Contest Solutions/" + solution_file_name, solution_file_content)
 	elif problem_id:
 		folder_name = "../metadata/problems/" + str(problem_id) + "/"
 
