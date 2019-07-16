@@ -75,12 +75,12 @@ def main(argv):
 			items = ['title', 'url', 'level', 'tags', 'thoughts', 'code.python3']
 			index = -1
 			try:
-				index = list_problem_id.find(int(problem_id))
+				index = list_problem_id.index(int(problem_id))
 			except Exception as e:
 				print("problem_id not in list")
 			if index != -1:
 				content['title'] = list_problem_title[index]
-				content['url'] = list_problem_url[index]
+				content['url'] = list_problem_url[index].split("/")[-1]
 				content['level'] = level[list_problem_level[index]]
 			for item in items:
 				file_name = problem_dir + '/' + str(problem_id) + '.' + item + '.md'
