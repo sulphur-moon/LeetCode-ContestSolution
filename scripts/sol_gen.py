@@ -106,7 +106,19 @@ def main(argv):
 		print(solution_file_content)
 		write_file_content("../LeetCode Contest Solutions/" + solution_file_name, solution_file_content)
 	elif problem_id:
-		folder_name = "../metadata/problems/" + str(problem_id) + "/"
+		prefix = "../metadata/problems/" + str(problem_id) + "/" + str(problem_id)
+		title = read_file_content(prefix + ".title.md")
+		url = read_file_content(prefix + ".url.md")
+		url = "https://leetcode-cn.com/problems/" + url
+		thoughts = read_file_content(prefix + ".thoughts.md")
+		code_python3 = read_file_content(prefix + ".code.python3.md")
+		file_name = "../metadata/problems/" + str(problem_id) + "/" + str(problem_id) + ".solution.md"
+		solution_file_content = "## " + str(problem_id) + '.' + title + "\n\n"
+		solution_file_content += "**题目链接：**\n\n"
+		solution_file_content += url + "\n\n"
+		solution_file_content += thoughts + "\n" + code_python3 + "\n"
+		print(solution_file_content)
+		write_file_content(prefix + ".solution.md", solution_file_content)
 
 
 if __name__ == "__main__":
