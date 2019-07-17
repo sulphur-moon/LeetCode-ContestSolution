@@ -68,7 +68,9 @@ def main(argv):
 			problem_list = problem_list.split()
 		print("problem_list: ", problem_list)
 		solution_file_name = "Weekly Contest " + contest_id + " Solution.md"
-		solution_file_content = "## Weekly Contest " + contest_id + " Solution\n\n"
+		# solution_file_content = "## Weekly Contest " + contest_id + " Solution\n\n"
+		contest_url = "https://leetcode-cn.com/contest/weekly-contest-" + str(contest_id)
+		solution_file_content = "## [第 " + str(contest_id) + " 场周赛](" + contest_url + ")\n\n"
 		contest_evaluation = read_file_content("../metadata/contest/weekly.contest." + str(contest_id) + ".evaluation.md")
 		if contest_evaluation:
 			solution_file_content += contest_evaluation + "\n\n"
@@ -79,7 +81,7 @@ def main(argv):
 			url = "https://leetcode-cn.com/contest/weekly-contest-" + str(contest_id) + "/problems/" + url
 			thoughts = read_file_content(prefix + ".thoughts.md")
 			code_python3 = read_file_content(prefix + ".code.python3.md")
-			solution_file_content += "### [" + problem_id + '.' + title + "](" + url + ")\n\n"
+			solution_file_content += "### [" + problem_id + '. ' + title + "](" + url + ")\n\n"
 			solution_file_content += thoughts + "\n" + code_python3 + "\n"
 		print(solution_file_content)
 		write_file_content("../LeetCode Contest Solutions/" + solution_file_name, solution_file_content)
@@ -90,7 +92,9 @@ def main(argv):
 			problem_list = problem_list.split()
 		print("problem_list: ", problem_list)
 		solution_file_name = "Biweekly Contest " + bicontest_id + " Solution.md"
-		solution_file_content = "## Biweekly Contest " + bicontest_id + " Solution\n\n"
+		# solution_file_content = "## Biweekly Contest " + bicontest_id + " Solution\n\n"
+		contest_url = "https://leetcode-cn.com/contest/biweekly-contest-" + str(bicontest_id)
+		solution_file_content = "## [第 " + str(bicontest_id) + " 场双周赛](" + contest_url + ")\n\n"
 		contest_evaluation = read_file_content("../metadata/contest/biweekly.contest." + str(bicontest_id) + ".evaluation.md")
 		if contest_evaluation:
 			solution_file_content += contest_evaluation + "\n\n"
@@ -101,7 +105,7 @@ def main(argv):
 			url = "https://leetcode-cn.com/contest/biweekly-contest-" + str(bicontest_id) + "/problems/" + url
 			thoughts = read_file_content(prefix + ".thoughts.md")
 			code_python3 = read_file_content(prefix + ".code.python3.md")
-			solution_file_content += "### [" + problem_id + '.' + title + "](" + url + ")\n\n"
+			solution_file_content += "### [" + problem_id + '. ' + title + "](" + url + ")\n\n"
 			solution_file_content += thoughts + "\n" + code_python3 + "\n"
 		print(solution_file_content)
 		write_file_content("../LeetCode Contest Solutions/" + solution_file_name, solution_file_content)
