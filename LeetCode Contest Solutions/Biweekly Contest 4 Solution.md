@@ -1,8 +1,8 @@
-## Biweekly Contest 4 Solution
+## [第 4 场双周赛](https://leetcode-cn.com/contest/biweekly-contest-4)
 
 本周比赛比较简单，用到算法有数学方法、字符串处理、深度优先搜索、贪心等。
 
-### [1118.一月有多少天](https://leetcode-cn.com/contest/biweekly-contest-4/problems/number-of-days-in-a-month)
+### [1118. 一月有多少天](https://leetcode-cn.com/contest/biweekly-contest-4/problems/number-of-days-in-a-month)
 
 **思路：**
 
@@ -41,7 +41,7 @@ class Solution:
 ```
 
 
-### [1119.删去字符串中的元音](https://leetcode-cn.com/contest/biweekly-contest-4/problems/remove-vowels-from-a-string)
+### [1119. 删去字符串中的元音](https://leetcode-cn.com/contest/biweekly-contest-4/problems/remove-vowels-from-a-string)
 
 **思路：**
 
@@ -50,7 +50,6 @@ class Solution:
 **图解：**
 
 ![图解](http://qiniu.wenyuetech.cn/1119-1.gif)
-
 
 **代码：**
 ```python
@@ -65,7 +64,7 @@ class Solution:
 ```
 
 
-### [1120.子树的最大平均值](https://leetcode-cn.com/contest/biweekly-contest-4/problems/maximum-average-subtree)
+### [1120. 子树的最大平均值](https://leetcode-cn.com/contest/biweekly-contest-4/problems/maximum-average-subtree)
 
 **思路：**
 
@@ -101,7 +100,7 @@ class Solution:
 ```
 
 
-### [1121.将数组分成几个递增序列](https://leetcode-cn.com/contest/biweekly-contest-4/problems/divide-array-into-increasing-sequences)
+### [1121. 将数组分成几个递增序列](https://leetcode-cn.com/contest/biweekly-contest-4/problems/divide-array-into-increasing-sequences)
 
 **思路：**
 
@@ -117,7 +116,6 @@ class Solution:
 ![图解](http://qiniu.wenyuetech.cn/1121-1.gif)
 
 **代码：**
-
 ```python
 class Solution:
     def canDivideIntoSubsequences(self, nums: List[int], K: int) -> bool:

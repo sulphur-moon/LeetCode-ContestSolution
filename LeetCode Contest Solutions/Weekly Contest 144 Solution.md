@@ -1,8 +1,8 @@
-## Weekly Contest 144 Solution
+## [第 144 场周赛](https://leetcode-cn.com/contest/weekly-contest-144)
 
 本周比赛题目除了第一道题很简单以外，后三道题都需要一些编程技巧，考察了数组前缀和、扫描线，二叉树的深度优先搜索，字符串处理，栈的深度等知识。
 
-### [1108.IP 地址无效化](https://leetcode-cn.com/contest/weekly-contest-144/problems/defanging-an-ip-address/)
+### [1108. IP 地址无效化](https://leetcode-cn.com/contest/weekly-contest-144/problems/defanging-an-ip-address)
 
 **思路：**
 
@@ -17,8 +17,7 @@ class Solution:
 ```
 
 
-### [1109.航班预订统计](https://leetcode-cn.com/contest/weekly-contest-144/problems/corporate-flight-bookings/)
-
+### [1109. 航班预订统计](https://leetcode-cn.com/contest/weekly-contest-144/problems/corporate-flight-bookings)
 
 **思路：**
 
@@ -63,8 +62,7 @@ class Solution:
 ```
 
 
-### [1110.删点成林](https://leetcode-cn.com/contest/weekly-contest-144/problems/delete-nodes-and-return-forest/)
-
+### [1110. 删点成林](https://leetcode-cn.com/contest/weekly-contest-144/problems/delete-nodes-and-return-forest)
 
 **思路：**
 
@@ -144,8 +142,7 @@ class Solution:
 ```
 
 
-### [1111.有效括号的嵌套深度](https://leetcode-cn.com/contest/weekly-contest-144/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/)
-
+### [1111. 有效括号的嵌套深度](https://leetcode-cn.com/contest/weekly-contest-144/problems/maximum-nesting-depth-of-two-valid-parentheses-strings)
 
 **思路：**
 

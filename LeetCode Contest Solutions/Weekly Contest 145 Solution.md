@@ -1,8 +1,8 @@
-## Weekly Contest 145 Solution
+## [第 145 场周赛](https://leetcode-cn.com/contest/weekly-contest-145)
 
 本周比赛题目比较难，考察对题目的理解和编程技巧，其中第三题多种解法，想要在比赛中写出最优解法比较困难。本周比赛用到的算法有排序、深度优先搜索、二分、数组前缀和、单调栈、动态规划等等。
 
-### [1122.数组的相对排序](https://leetcode-cn.com/contest/weekly-contest-145/problems/relative-sort-array)
+### [1122. 数组的相对排序](https://leetcode-cn.com/contest/weekly-contest-145/problems/relative-sort-array)
 
 **思路：**
 
@@ -27,7 +27,7 @@ class Solution:
             ans += [a] * cnt[a]
         return ans + sorted(not_exist)
 ```
-### [1123.最深叶节点的最近公共祖先](https://leetcode-cn.com/contest/weekly-contest-145/problems/lowest-common-ancestor-of-deepest-leaves)
+### [1123. 最深叶节点的最近公共祖先](https://leetcode-cn.com/contest/weekly-contest-145/problems/lowest-common-ancestor-of-deepest-leaves)
 
 **思路：**
 
@@ -63,7 +63,7 @@ class Solution:
         ans, h = dfs(root)
         return ans
 ```
-### [1124.最长的表现良好时间段](https://leetcode-cn.com/contest/weekly-contest-145/problems/longest-well-performing-interval)
+### [1124. 最长的表现良好时间段](https://leetcode-cn.com/contest/weekly-contest-145/problems/longest-well-performing-interval)
 
 **思路：**
 
@@ -74,7 +74,6 @@ class Solution:
 **图解：**
 
 ![图解](http://qiniu.wenyuetech.cn/1124-1.gif)
-
 
 **代码：**
 ```python
@@ -107,7 +106,7 @@ class Solution:
             i -= 1
         return ans
 ```
-### [1125.最小的必要团队](https://leetcode-cn.com/contest/weekly-contest-145/problems/smallest-sufficient-team)
+### [1125. 最小的必要团队](https://leetcode-cn.com/contest/weekly-contest-145/problems/smallest-sufficient-team)
 
 **思路：**
 
