@@ -25,7 +25,7 @@ def main(argv):
 	# print(contest_list)
 	d = dict()
 	for i, p in enumerate(problem_list):
-		d[p.strip()] = i
+		d[p.strip()] = i + 1
 	# print(d)
 	ids = []
 	contest_id = None
