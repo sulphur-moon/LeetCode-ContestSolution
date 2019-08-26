@@ -103,7 +103,10 @@ def main(argv):
 		for p in contest_list:
 			gen_meta_by_problem_id(int(p))
 	elif bicontest_id:
-		pass
+		print("bicontest:", bicontest_id)
+		contest_list = read_file_content("../metadata/contest/biweekly.contest." + str(bicontest_id) + ".md").split("\n")
+		for p in contest_list:
+			gen_meta_by_problem_id(int(p))
 
 
 if __name__ == "__main__":
