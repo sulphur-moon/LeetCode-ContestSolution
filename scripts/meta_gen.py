@@ -67,9 +67,9 @@ list_problem_level = read_file_content("../metadata/list/level.txt").split("\n")
 def main(argv):
 	# 按照题号生成元数据
 	problem_id = None
-	# 按照题号生成元数据
+	# 按照周赛生成元数据
 	contest_id = None
-	# 按照题号生成元数据
+	# 按照双周赛生成元数据
 	bicontest_id = None
 	# 获取命令行下参数
 	try:
